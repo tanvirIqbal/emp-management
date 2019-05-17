@@ -34,12 +34,8 @@ namespace EmployeeManagement
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Use(async (context, next) =>
-            {
-                logger.LogInformation("MW1: 1");
-                await next();
-                logger.LogInformation("MW1: 2");
-            });
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.Run(async (context) =>
             {
