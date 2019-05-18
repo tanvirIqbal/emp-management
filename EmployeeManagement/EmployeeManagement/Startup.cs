@@ -31,18 +31,20 @@ namespace EmployeeManagement
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                DeveloperExceptionPageOptions developerExceptionPageOptions = new DeveloperExceptionPageOptions()
+                {
+                    SourceCodeLineCount = 1
+                };
+                // Use this middleware as early as possible.
+                app.UseDeveloperExceptionPage(developerExceptionPageOptions);
             }
 
-            DefaultFilesOptions defaultFileOptions = new DefaultFilesOptions();
-            defaultFileOptions.DefaultFileNames.Clear();
-            defaultFileOptions.DefaultFileNames.Add("foo.html");
-
-            app.UseDefaultFiles(defaultFileOptions);
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.Run(async (context) =>
             {
+                throw new Exception("Some errors have occured.");
                 await context.Response.WriteAsync("Terminal Middleware");
             });
         }
