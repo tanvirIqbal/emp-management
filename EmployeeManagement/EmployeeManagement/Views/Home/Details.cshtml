@@ -1,4 +1,4 @@
-﻿@model EmployeeManagement.Models.Employee
+﻿@model EmployeeManagement.ViewModels.HomeDetailsViewModel
 
 @{
     Layout = null;
@@ -9,18 +9,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.PageTitle</title>
+    <title>@Model.PageTitle</title>
 </head>
 <body>
 
     <div>
-        Name: @Model.Name
+        Name: @Model.Employee.Name
     </div>
     <div>
-        Department: @Model.Department
+        Department: @Model.Employee.Department
     </div>
     <div>
-        Email: @Model.Email
+        Email: @Model.Employee.Email
     </div>
 </body>
 </html>
