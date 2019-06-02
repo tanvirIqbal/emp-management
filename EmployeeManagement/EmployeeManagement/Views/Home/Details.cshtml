@@ -8,21 +8,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewData["PageTitle"]</title>
+    <title>@ViewBag.PageTitle</title>
 </head>
 <body>
-    @{
-        var employee = ViewData["Employee"] as EmployeeManagement.Models.Employee;
-    }
 
     <div>
-        Name: @employee.Name
+        Name: @ViewBag.Employee.Name
     </div>
     <div>
-        Department: @employee.Deparement
+        Department: @ViewBag.Employee.Department
     </div>
     <div>
-        Email: @employee.Email
+        Email: @ViewBag.Employee.Email
     </div>
 </body>
 </html>
