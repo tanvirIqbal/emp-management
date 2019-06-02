@@ -1,17 +1,10 @@
 ﻿@model EmployeeManagement.ViewModels.HomeDetailsViewModel
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Employee Details";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@Model.PageTitle</title>
-</head>
-<body>
 
     <div>
         Name: @Model.Employee.Name
@@ -22,5 +15,4 @@
     <div>
         Email: @Model.Employee.Email
     </div>
-</body>
-</html>
+
