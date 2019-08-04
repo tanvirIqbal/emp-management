@@ -6,17 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controllers
 {
+    [Route("[controller]")]
     public class DepartmentsController : Controller
     {
         //public IActionResult Index()
         //{
         //    return View();
         //}
+        [Route("[action]")]
         public string List()
         {
             return "List() of DepartmentsController";
         }
 
+        [Route("[action]")]
         public string Details()
         {
             return "Details() of DepartmentsController";

@@ -17,7 +17,7 @@ namespace EmployeeManagement.Controllers
             _employeeRepository = employeeRepository;
         }
         [Route("/")]
-        [Route("")]
+        [Route("")]// Makes Index(), the default action
         [Route("Index")]
         public ViewResult Index()
         {
