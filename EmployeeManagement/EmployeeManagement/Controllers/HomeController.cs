@@ -20,11 +20,11 @@ namespace EmployeeManagement.Controllers
             return View(_employeeRepository.GetEmployees());
         }
 
-        public ViewResult Details()
+        public ViewResult Details(int? Id)
         {
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
-                Employee = _employeeRepository.GetEmployee(1),
+                Employee = _employeeRepository.GetEmployee(Id??1),
                 PageTitle = "Employee Details"
             };
             return View(homeDetailsViewModel);
