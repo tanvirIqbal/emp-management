@@ -24,6 +24,12 @@ namespace EmployeeManagement.Controllers
             return View(_employeeRepository.GetEmployees());
         }
 
+        [Route("Create")]
+        public ViewResult Create()
+        {
+            return View(new Employee());
+        }
+
         [Route("Details/{id?}")]
         public ViewResult Details(int? Id)
         {
