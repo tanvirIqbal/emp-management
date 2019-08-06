@@ -17,6 +17,12 @@ namespace EmployeeManagement.Models
                 new Employee(){Id=3,Name="Sam",Department= Dept.Payroll,Email="sam@email.com"}
             };
         }
+        public Employee Add(Employee employee)
+        {
+            employee.Id = _employees.Max(e => e.Id) + 1;
+            _employees.Add(employee);
+            return employee;
+        }
         public Employee GetEmployee(int Id)
         {
             return _employees.FirstOrDefault(x => x.Id == Id);
