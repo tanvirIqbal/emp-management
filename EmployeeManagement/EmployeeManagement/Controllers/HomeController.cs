@@ -77,11 +77,18 @@ namespace EmployeeManagement.Controllers
         }
 
         //[Route("Details/{id?}")]
-        public ViewResult Details(int? Id)
+        public ViewResult Details(int Id)
         {
+            Employee employee = _employeeRepository.GetEmployee(Id);
+            if (employee == null)
+            {
+                Response.StatusCode = 404;
+                return View("EmployeeNotFound", Id);
+            }
+
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
-                Employee = _employeeRepository.GetEmployee(Id??1),
+                Employee = employee,
                 PageTitle = "Employee Details"
             };
             return View(homeDetailsViewModel);
