@@ -32,5 +32,27 @@ namespace EmployeeManagement.Models
         {
             return _employees;
         }
+
+        public Employee Delete(int Id)
+        {
+            Employee employee = _employees.FirstOrDefault(e => e.Id == Id);
+            if (employee != null)
+            {
+                _employees.Remove(employee);
+            }
+            return employee;
+        }
+
+        public Employee Update(Employee employeeChanges)
+        {
+            Employee employee = _employees.FirstOrDefault(e => e.Id == employeeChanges.Id);
+            if (employee != null)
+            {
+                employee.Name = employeeChanges.Name;
+                employee.Email = employeeChanges.Email;
+                employee.Department = employeeChanges.Department;
+            }
+            return employee;
+        }
     }
 }
