@@ -42,7 +42,7 @@ namespace EmployeeManagement
             }
             else
             {
-                app.UseStatusCodePagesWithRedirects("/Error/{0}");
+                app.UseExceptionHandler("/Error");
             }
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();

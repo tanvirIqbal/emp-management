@@ -79,6 +79,7 @@ namespace EmployeeManagement.Controllers
         //[Route("Details/{id?}")]
         public ViewResult Details(int Id)
         {
+            throw new Exception("Error");
             Employee employee = _employeeRepository.GetEmployee(Id);
             if (employee == null)
             {
